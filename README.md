@@ -1,3 +1,10 @@
+**Install Dependencies**
+
+```bash
+sudo apt-get update
+sudo apt-get install -y build-essential chromium-browser
+```
+
 https://open-meteo.com/en/docs/meteofrance-api#latitude=48.9047&longitude=2.2469&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,rain,showers,snowfall,weather_code,cloud_cover,wind_speed_10m,wind_direction_10m&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation&timezone=auto
 
 

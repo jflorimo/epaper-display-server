@@ -1,7 +1,17 @@
+import { EventEmitter } from "events";
 import { HttpServer } from "./http-server";
 import { WeatherFetcher } from "./weather_fetcher";
+import { ContentManager } from "./content_mananger";
+
+export const emitter = new EventEmitter()
 
 const http = new HttpServer()
-const weatherFetcher = new WeatherFetcher()
+const contentMananger = new ContentManager()
 
-weatherFetcher.refresh()
+
+// const weatherFetcher = new WeatherFetcher()
+
+// weatherFetcher.refresh()
+
+
+

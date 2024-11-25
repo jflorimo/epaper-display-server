@@ -1,6 +1,10 @@
 # Use the official Node.js LTS image as the base image
 FROM node:18
 
+RUN apt-get update
+RUN apt-get install -y build-essential 
+RUN apt-get install -y chromium
+
 # Set the working directory inside the container
 WORKDIR /app
 

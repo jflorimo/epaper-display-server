@@ -1,0 +1,1 @@
+export const DISPLAY_UPDATE_INTERVAL = 60 * 1 * 1000
