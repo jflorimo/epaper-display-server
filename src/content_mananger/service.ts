@@ -18,3 +18,28 @@ function writeBase64ToFile(base64Data: string, outputPath: string): void {
         console.error('Error writing Base64 data to file:', error);
     }
 }
+
+
+export function generateHtmlFromTemplate(templatePath: string, outputPath: string, data: any) {
+    try {
+        // Read the template file
+        const template = fs.readFileSync(templatePath, 'utf-8');
+
+        // Replace placeholders in the template
+        console.log(data)
+        const result = template.replace(/{{\s*([\w]+)\s*}}/g, (match, key) => {
+            // if (key in data)
+            console.log("match: ", match)
+            console.log("key:", key)
+            console.log(key in data)
+            return key in data ? data[key] : match; // Replace if key exists, otherwise keep original
+        });
+
+
+        // Write the output to a new file
+        fs.writeFileSync(outputPath, result, 'utf-8');
+        console.log(`Generated HTML written to ${outputPath}`);
+    } catch (error: any) {
+        console.error("Error processing template:", error.message);
+    }
+}
